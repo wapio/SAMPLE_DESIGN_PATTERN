@@ -1,4 +1,4 @@
-package wapio.design_pattern.adapter.template;
+package wapio.design_pattern.template;
 
 public class StringDisplay extends AbstractDisplay {
 	
