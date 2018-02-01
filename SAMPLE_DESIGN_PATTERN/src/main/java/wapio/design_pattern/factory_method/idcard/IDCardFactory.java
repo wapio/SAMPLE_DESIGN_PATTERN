@@ -9,10 +9,12 @@ import wapio.design_pattern.factory_method.framework.Product;
 public class IDCardFactory extends Factory {
 	
 	private List<String> owners = new ArrayList<String>();
+	
+	private int lastNumber = 0;
 
 	@Override
-	protected Product createProduct(String owner) {
-		return new IDCard(owner);
+	protected synchronized Product createProduct(String owner) {
+		return new IDCard(owner, ++lastNumber);
 	}
 
 	@Override
